@@ -173,7 +173,7 @@ Se funcionar, você deve sofrer um erro "Forbidden", verifique se os RoleBinding
 kubectl get pods -n lfs158
 ```
 
-Referências
-https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
-https://trainingportal.linuxfoundation.org/learn/course/introduction-to-kubernetes/authentication-authorization-admission-control-1/
+Referências:
+- https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+- https://trainingportal.linuxfoundation.org/learn/course/introduction-to-kubernetes/authentication-authorization-admission-control-1/
 
