@@ -143,6 +143,7 @@ kubectl config set-credentials bob \
   --embed-certs=true
 ```
 ### 4.2 Criar um Contexto para o Usuário
+No Kubernetes, contexto (ou context) é um conceito usado para gerenciar múltiplos clusters, usuários e namespaces de forma organizada. Neste guide vamos usar diferentes contextos para setar credenciais do usuário bob e testar as permissões.
 ```bash
 kubectl config set-context bob-context \
   --cluster=$(kubectl config view --minify -o jsonpath='{.clusters[0].name}') \
