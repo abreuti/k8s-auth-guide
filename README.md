@@ -7,7 +7,7 @@ Este manual detalha o processo para criar um usuário no Kubernetes utilizando u
 Conteúdo absorvido no curso Introduction to Kubernetes (LFS158) da Linux Foundation Org. 
 capitulo > 10. Authentication, Authorization, Admission Control
 
-Pré-Requisitos
+Pré-Requisitos:
 
 Criar o namespace lfs158
 ```bash
