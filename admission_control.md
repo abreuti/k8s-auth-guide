@@ -1,6 +1,6 @@
 # Repositório de Estudos K8S
 
-## Admission Control in Kubernetes
+## Admission Control in Kubernetes (EM CONSTRUÇÃO)
 
 Este manual detalha o processo para criar um processo de admissão de controles no Kubernetes.
 
