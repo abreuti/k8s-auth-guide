@@ -150,6 +150,14 @@ kubectl config set-context bob-context \
   --namespace=default \
   --user=bob
 ```
+kubectl config view --minify:
+- O comando kubectl config view exibe o conteúdo do arquivo kubeconfig.
+- A opção --minify reduz a saída para mostrar apenas as configurações relevantes para o contexto atual. Objetivo é remover informações desnecessárias.
+- A opção -o jsonpath permite extrair valores específicos do arquivo kubeconfig usando uma expressão JSONPath.
+- Neste caso, a expressão {.clusters[0].name} busca o nome do primeiro cluster ([0]) na lista de clusters.
+ O $(...) é uma substituição de comando no shell. Ele executa o comando dentro dos parênteses e substitui a expressão pelo resultado.
+- No caso, o comando kubectl config view --minify -o jsonpath='{.clusters[0].name}' retorna o nome do cluster atual, que é então passado para a opção --cluster
+
 ### 4.3 Alternar para o Contexto de bob
 ```bash
 kubectl config use-context bob-context
