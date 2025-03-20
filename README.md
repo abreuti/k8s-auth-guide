@@ -26,11 +26,11 @@ Agora sim, partimos do ponto em que o ambiente possuí um namespace específico 
 
 Cada usuário no Kubernetes precisa de um certificado assinado pela CA do cluster. Primeiro, criamos a chave privada e o CSR.
 
-\*O CSR (do inglês Certificate Signing Request, ou Pedido de Assinatura de Certificado) é um arquivo ou mensagem que contém informações sobre uma entidade (como um usuário, servidor ou dispositivo) que deseja obter um certificado digital assinado por uma Autoridade Certificadora (CA).
+<!-- O CSR (do inglês Certificate Signing Request, ou Pedido de Assinatura de Certificado) é um arquivo ou mensagem que contém informações sobre uma entidade (como um usuário, servidor ou dispositivo) que deseja obter um certificado digital assinado por uma Autoridade Certificadora (CA).
 
-No contexto do Kubernetes, o CSR é usado para solicitar que a CA do cluster assine um certificado digital para um usuário ou componente, permitindo que ele se autentique de forma segura no cluster.\*
+No contexto do Kubernetes, o CSR é usado para solicitar que a CA do cluster assine um certificado digital para um usuário ou componente, permitindo que ele se autentique de forma segura no cluster.
 
-\*Antes de criar um CSR, você gera uma chave privada (um arquivo criptográfico que só o solicitante deve ter). A chave privada é usada para criar o CSR e, posteriormente, para assinar transações ou autenticar o usuário.\*
+Antes de criar um CSR, você gera uma chave privada (um arquivo criptográfico que só o solicitante deve ter). A chave privada é usada para criar o CSR e, posteriormente, para assinar transações ou autenticar o usuário. -->
 
 ### 1.1 Gerar a Chave Privada
 ```yaml
