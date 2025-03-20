@@ -5,7 +5,7 @@
 Este manual detalha o processo para criar um processo de admissão de controles no Kubernetes.
 
 Conteúdo absorvido no curso Introduction to Kubernetes (LFS158) da Linux Foundation Org. 
-capitulo > 10. Authentication, Authorization, Admission Control
+Capitulo > 10. Authentication, Authorization, Admission Control
 
 O Admission Controller no Kubernetes é um mecanismo que permite interceptar e processar solicitações à API do Kubernetes antes que elas sejam persistidas no etcd (o armazenamento de chave-valor do Kubernetes). Ele age como um "porteiro", validando ou modificando as solicitações conforme necessário.
 
