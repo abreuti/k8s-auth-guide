@@ -1,10 +1,10 @@
 # Repositório de Estudos K8S
 
-## Autenticação e Autorização no Kubernetes com CSR
+## Autenticação e Autorização no Kubernetes com certificado CSR
 
 Este manual detalha o processo para criar um usuário no Kubernetes utilizando um certificado CSR, configurar RBAC e garantir que ele tenha permissão para listar pods.
 
-Conteúdo estudado no curso Introduction to Kubernetes (LFS158) da Linux Foundation Org. 
+Conteúdo absorvido no curso Introduction to Kubernetes (LFS158) da Linux Foundation Org. 
 capitulo > 10. Authentication, Authorization, Admission Control
 
 Pré-Requisitos
