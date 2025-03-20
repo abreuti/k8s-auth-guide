@@ -17,3 +17,9 @@ Validar a solicitação (Validating Admission Controller):
 Modificar a solicitação (Mutating Admission Controller):
 - Altera a solicitação antes que ela seja persistida.
 - Exemplo: Adicionar automaticamente um rótulo ou sidecar a um Pod.
+
+O Admission Control não pode bloquear requests de read(get, watcth ou list) em objetos, por causa que leituras ignoram a camada de controle de admissão.
+
+O que o Admission Control pode fazer? 
+https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#what-does-each-admission-controller-do
+

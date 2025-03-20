@@ -168,10 +168,10 @@ Agora testamos se bob consegue acessar os pods.
 ```bash
 kubectl get pods
 ```
-Se funcionar, você verá a lista de pods. Se aparecer "Forbidden", verifique se os RoleBindings estão aplicados corretamente.
+Se funcionar, você deve sofrer um erro "Forbidden", verifique se os RoleBindings estão aplicados corretamente. Está correto, o usuário bob pode acessar e listar pods apenas no namespace lfs158
+```bash
+kubectl get pods -n lfs158
+```
 
-Conclusão
 
-Este manual cobre desde a criação do certificado CSR até a autenticação e permissões no Kubernetes usando RBAC.
 
-Agora, o usuário bob pode acessar e listar pods no namespace lfs158 de forma segura. 🚀
