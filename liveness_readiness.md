@@ -52,7 +52,10 @@ docker push container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:la
 ```
 > O comando docker push envia a imagem marcada para o registry. Isso faz com que a imagem seja armazenada no Container Registry e fique disponível para uso e distribuição. Esse comando faz o upload da imagem simple-python-app:latest para o registry diego-cr na região especificada.
 
-
+## Como funciona:
+- A aplicação demora 10 segundos para se declarar pronta (readiness)
+- Após 30 segundos de funcionamento, ela "quebra" e o livenessProbe começa a falhar
+- O Kubernetes vai reiniciar o container automaticamente
 
 
 
