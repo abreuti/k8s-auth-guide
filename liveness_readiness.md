@@ -62,6 +62,18 @@ docker push container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:la
 > O comando docker push envia a imagem marcada para o registry. Isso faz com que a imagem seja armazenada no Container Registry e fique disponível para uso e distribuição. Esse comando faz o upload da imagem simple-python-app:latest para o registry diego-cr na região especificada.
 
 ## Fazer o deploy no Kubernetes com a imagem no CR
+Antes de acessar o Container Registry da Magalu Cloud no cluster Kubernetes, precisei configurar uma secret para o K8S conseguir baixar a imagem.
+
+Usei este comando substituindo os valores corretamente, segue exemplo abaixo:
+```bash
+kubectl create secret docker-registry regcred \
+  --docker-server=container-registry.br-se1.magalu.cloud \
+  --docker-username=<seu-usuario> \
+  --docker-password=<seu-token-ou-senha> \
+  --docker-email=<seu-email>
+```
+
+
 Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo YAML https://github.com/abreuti/k8s-auth-guide/blob/main/liveness_readiness_files/deploy.yaml
 ```bash
 kubectl apply -f simple-python-app.yaml
