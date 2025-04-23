@@ -45,15 +45,11 @@ docker login https://container-registry.br-se1.magalu.cloud
 ```
 > O comando docker login autentica o seu Docker com o Container Registry usando as credenciais obtidas pelo provedor de CR
 
-
-
 Agora será necessário Taguear a Imagem Docker:
 ```bash
 docker tag simple-python-app:latest container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:latest
 ```
 > O comando docker tag associa uma imagem local com um nome e endereço de registry no Magalu Cloud. A imagem simple-python-app:latest será marcada para o registry diego-cr na região br-se1
-
-
 
 Depois realizamos o Push da Imagem Docker:
 ```bash
@@ -72,7 +68,9 @@ kubectl create secret docker-registry regcred \
   --docker-password=<seu-token-ou-senha> \
   --docker-email=<seu-email>
 ```
-
+>**Um ponto de atenção aqui e que ocorreu erro em meu deploy, foi que esqueci de referenciar a secret no arquivo yaml, isso gerou erro ao realizar pull da imagem do CR. Importante setar esta configuração usando o 
+        imagePullSecrets:
+        - name: regcred**
 
 Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo YAML https://github.com/abreuti/k8s-auth-guide/blob/main/liveness_readiness_files/deploy.yaml
 ```bash
