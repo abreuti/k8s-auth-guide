@@ -21,10 +21,9 @@ contém os seguintes arquivos principais:
 - **`Dockerfile`**: Arquivo para construir a imagem Docker da aplicação.
 - **`simple-python-app.yaml`**: Configuração do Pod do Kubernetes para rodar a aplicação.
 
-Construir a imagem Docker da aplicação:
+## Construir a imagem Docker da aplicação:
 
 Para criar a imagem Docker da aplicação, utilizei o seguinte comando:
-
 ```bash
 docker build -t simple-python-app .
 ```
@@ -33,8 +32,7 @@ Como estou utilizando CR da Magalu Cloud, a região escolhida foi o DC da regiã
 ```bash
 docker login https://container-registry.br-se1.magalu.cloud
 ```
-
-O comando docker login autentica o seu Docker com o Container Registry usando as credenciais obtidas pelo provedor de CR.
+** O comando docker login autentica o seu Docker com o Container Registry usando as credenciais obtidas pelo provedor de CR **
 
 Agora será necessário Taguear a Imagem Docker:
 ```bash
