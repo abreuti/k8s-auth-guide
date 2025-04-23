@@ -1,4 +1,4 @@
-# Experimentos interessantes pra fazer
+# Experimentos interessantes pra fazer com o objetivo de entender o comportamento de Read/Live(ness) e alguns debugs. 
 
 ## 1. Mudar a lógica da app https://github.com/abreuti/k8s-auth-guide/blob/main/liveness_readiness_1.0.md
 - Deixar o readiness sempre False e vê se o pod entra no Service (não entra).
