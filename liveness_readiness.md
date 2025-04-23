@@ -66,7 +66,7 @@ Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo
 ```bash
 kubectl apply -f simple-python-app.yaml
 ```
-## Simulação Esperada
+## Cenário Esperado
 ### A aplicação simula um comportamento real de serviços:
 - Demora 10 segundos para se declarar pronta (/ready)
 - Após 30 segundos, simula uma falha (/healthz começa a retornar erro)
@@ -74,6 +74,18 @@ kubectl apply -f simple-python-app.yaml
 - Readiness: não envia tráfego até /ready retornar 200
 - Liveness: reinicia o container quando /healthz retornar erro
 
+### Como testar ?
+- Verificar o Status do Pod
+```bash
+kubectl get pods
+```
+O pod vai iniciar com status 0/1, e após 10s irá para 1/1.
+Depois de 30s, o container será reiniciado automaticamente pelo Kubernetes devido à falha simulada no /healthz.
 
+
+## 📚 Estudo Pessoal
+
+Este projeto foi criado como **estudo pessoal** sobre Kubernetes, probes e automação com Docker.  
+Se você chegou até aqui, fique à vontade para usar como base para seus testes e estudos também!
 
   
