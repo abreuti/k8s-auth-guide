@@ -34,20 +34,23 @@ Como estou utilizando CR da Magalu Cloud, a região escolhida foi o DC da regiã
 ```bash
 docker login https://container-registry.br-se1.magalu.cloud
 ```
-> **O comando docker login autentica o seu Docker com o Container Registry usando as credenciais obtidas pelo provedor de CR**
+> O comando docker login autentica o seu Docker com o Container Registry usando as credenciais obtidas pelo provedor de CR
+
 
 
 Agora será necessário Taguear a Imagem Docker:
 ```bash
 docker tag simple-python-app:latest container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:latest
 ```
-> **O comando docker tag associa uma imagem local com um nome e endereço de registry no Magalu Cloud. A imagem simple-python-app:latest será marcada para o registry diego-cr na região br-se1**
+> O comando docker tag associa uma imagem local com um nome e endereço de registry no Magalu Cloud. A imagem simple-python-app:latest será marcada para o registry diego-cr na região br-se1
+
+
 
 Depois realizamos o Push da Imagem Docker:
 ```bash
 docker push container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:latest
 ```
-> **O comando docker push envia a imagem marcada para o registry. Isso faz com que a imagem seja armazenada no Container Registry e fique disponível para uso e distribuição. Esse comando faz o upload da imagem simple-python-app:latest para o registry diego-cr na região especificada.**
+> O comando docker push envia a imagem marcada para o registry. Isso faz com que a imagem seja armazenada no Container Registry e fique disponível para uso e distribuição. Esse comando faz o upload da imagem simple-python-app:latest para o registry diego-cr na região especificada.
 
 
 
