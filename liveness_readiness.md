@@ -135,6 +135,11 @@ Re-pulling Image - O Kubernetes tentou puxar novamente a imagem do registry para
 Normal   Pulled     3m14s                  kubelet            Successfully pulled image "container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:latest" in 440ms (440ms including waiting). Image size: 55337330 bytes.
 ```
 
+## Comportamento esperado da aplicação com probes simulados
+A aplicação Flask foi criada para simular dois comportamentos comuns em ambientes Kubernetes:
+- Readiness Delay: demora 10 segundos para estar pronta (/ready responde 503 até então).
+- Liveness Failure: "quebra" após 30 segundos de execução (/healthz passa a responder 500).
+
 
 ## 📚 Estudo Pessoal
 
