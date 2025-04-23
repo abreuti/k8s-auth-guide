@@ -23,7 +23,7 @@ contém os seguintes arquivos principais:
 
 ---
 
-## Construir a imagem Docker da aplicação:
+## Construir a imagem Docker da aplicação e realizar o push para o Container Registry
 
 Para criar a imagem Docker da aplicação, utilizei o seguinte comando:
 ```bash
@@ -51,6 +51,9 @@ Depois realizamos o Push da Imagem Docker:
 docker push container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:latest
 ```
 > O comando docker push envia a imagem marcada para o registry. Isso faz com que a imagem seja armazenada no Container Registry e fique disponível para uso e distribuição. Esse comando faz o upload da imagem simple-python-app:latest para o registry diego-cr na região especificada.
+
+## Baixar imagem no Kubernetes
+Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo YAML 
 
 ## Como funciona:
 - A aplicação demora 10 segundos para se declarar pronta (readiness)
