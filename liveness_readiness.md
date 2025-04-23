@@ -116,6 +116,15 @@ Ciclo contínuo - Esse ciclo continua indefinidamente:
 
 Observações: Após 6 restart, o K8S me retornou CrashLoopBackOff porque o container continua quebrando com frequência, então o K8s aplica backoff exponencial para não sobrecarregar o nó. Como é só um exemplo/simulação: tá funcionando como o esperado!
 
+## Conceitos importantes que aprendi
+Probes:
+- readiness impede que o Pod entre no Service antes de estar pronto.
+- liveness reinicia o container se ele travar (ex: deadlock).
+
+CrashLoopBackOff:
+- Quando o container cai logo após subir, e o kubelet tenta reiniciar de novo e de novo...
+- Tenta ver com logs --previous por que caiu.
+
 ## 📚 Estudo Pessoal
 
 Este projeto foi criado como **estudo pessoal** sobre Kubernetes, probes e automação com Docker.  
