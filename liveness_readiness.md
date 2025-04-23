@@ -100,7 +100,7 @@ Ao realizar um describe no pod, recebi os seguintes eventos
 
 ![image](https://github.com/user-attachments/assets/06672018-2cb5-4492-b414-b25baef17d13)
 
-##Eventos Observados
+## Eventos Observados
 Abaixo está a lista de eventos observados no Kubernetes para o pod simple-python-app, com explicações sobre cada etapa.
 
 Assigned to Node - O pod foi agendado com sucesso em um nó do cluster Kubernetes.
