@@ -92,48 +92,9 @@ kubectl get pods
 O pod vai iniciar com status 0/1, e após 10s irá para 1/1.
 Depois de 30s, o container será reiniciado automaticamente pelo Kubernetes devido à falha simulada no /healthz.
 
-Deixei o pod rodando por alguns minutos e percebi que haviam 5 restarts realizados
-
-![image](https://github.com/user-attachments/assets/07b1a74f-9e8f-4011-bf1f-6725c056e395)
-
 Ao realizar um describe no pod, recebi os seguintes eventos
 
-![image](https://github.com/user-attachments/assets/06672018-2cb5-4492-b414-b25baef17d13)
-
-## Eventos Observados
-Abaixo está a lista de eventos observados no Kubernetes para o pod simple-python-app, com explicações sobre cada etapa.
-
-Assigned to Node - O pod foi agendado com sucesso em um nó do cluster Kubernetes.
-```bash
-Normal   Scheduled  6m35s                  default-scheduler  Successfully assigned default/simple-python-app-5dcb55c65b-45sfk to np-default-jvztq-nzpcl
-```
-
-Image Pulled - A imagem foi puxada com sucesso do container registry da Magalu Cloud.
-```bash
-Normal   Pulled     6m29s                  kubelet            Successfully pulled image "container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:latest" in 6.098s (6.098s including waiting). Image size: 55337330 bytes.
-```
-
-Container Created & Started - O container foi criado e iniciado com sucesso.
-```bash
-Normal   Created    4m19s (x3 over 6m29s)  kubelet            Created container simple-python-app
-Normal   Started    4m19s (x3 over 6m28s)  kubelet            Started container simple-python-app
-```
-Readiness Probe Failed (503) - A Readiness Probe falhou inicialmente, retornando 503. Isso é esperado, pois a aplicação simula um tempo de inicialização e só se torna "pronta" após 10 segundos.
-```bash
-Warning  Unhealthy  4m11s (x5 over 6m23s)  kubelet            Readiness probe failed: HTTP probe failed with statuscode: 503
-```
-Liveness Probe Failed (500) - Após 30 segundos, a aplicação simulou uma falha e a Liveness Probe retornou 500. Isso indicou que o aplicativo não estava saudável.
-```bash
-Warning  Unhealthy  3m45s (x3 over 5m55s)  kubelet            Liveness probe failed: HTTP probe failed with statuscode: 500
-```
-Container Restarted - Como a Liveness Probe falhou, o Kubernetes reiniciou o container automaticamente.
-```bash
-Normal   Killing    3m45s (x3 over 5m55s)  kubelet            Container simple-python-app failed liveness probe, will be restarted
-```
-Re-pulling Image - O Kubernetes tentou puxar novamente a imagem do registry para criar um novo pod.
-```bash
-Normal   Pulled     3m14s                  kubelet            Successfully pulled image "container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:latest" in 440ms (440ms including waiting). Image size: 55337330 bytes.
-```
+![image](https://github.com/user-attachments/assets/14038f7e-ecf5-45c6-bad1-602d7cde9c3a)
 
 ## Comportamento esperado da aplicação com probes simulados
 A aplicação Flask foi criada para simular dois comportamentos comuns em ambientes Kubernetes:
