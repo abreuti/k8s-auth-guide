@@ -11,3 +11,14 @@ Este projeto demonstra como rodar uma aplicação simples em Python com Flask de
 - Conta na [Magalu Cloud](https://www.magalucloud.com.br/) para utilizar o CR (Container Registry)
 
 ...
+
+## Estrutura do Projeto
+
+O repositório contém os seguintes arquivos principais:
+
+- **`app.py`**: Código da aplicação em Python usando Flask.
+- **`Dockerfile`**: Arquivo para construir a imagem Docker da aplicação.
+- **`simple-python-app.yaml`**: Configuração do Pod do Kubernetes para rodar a aplicação.
+- **`liveness_readiness.md`**: Este arquivo.
+
+  
