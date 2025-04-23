@@ -26,6 +26,10 @@ contém os seguintes arquivos principais:
 - Após 30 segundos de funcionamento, ela "quebra" e o livenessProbe começa a falhar
 - O Kubernetes vai reiniciar o container automaticamente
 
+### O que é testado aqui?
+- Readiness Probe: controla quando o Kubernetes deve começar a enviar tráfego para o pod.
+- Liveness Probe: detecta quando o container travou e precisa ser reiniciado.
+
 ---
 
 ## Construir a imagem Docker da aplicação e realizar o push para o Container Registry
@@ -62,7 +66,13 @@ Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo
 ```bash
 kubectl apply -f simple-python-app.yaml
 ```
-
+## Simulação Esperada
+### A aplicação simula um comportamento real de serviços:
+- Demora 10 segundos para se declarar pronta (/ready)
+- Após 30 segundos, simula uma falha (/healthz começa a retornar erro)
+### Kubernetes reage:
+- Readiness: não envia tráfego até /ready retornar 200
+- Liveness: reinicia o container quando /healthz retornar erro
 
 
 
