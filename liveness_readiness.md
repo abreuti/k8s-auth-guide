@@ -21,6 +21,11 @@ contém os seguintes arquivos principais:
 - **`Dockerfile`**: Arquivo para construir a imagem Docker da aplicação.
 - **`simple-python-app.yaml`**: Configuração do Pod do Kubernetes para rodar a aplicação.
 
+## Como funciona:
+- A aplicação demora 10 segundos para se declarar pronta (readiness)
+- Após 30 segundos de funcionamento, ela "quebra" e o livenessProbe começa a falhar
+- O Kubernetes vai reiniciar o container automaticamente
+
 ---
 
 ## Construir a imagem Docker da aplicação e realizar o push para o Container Registry
@@ -52,13 +57,12 @@ docker push container-registry.br-se1.magalu.cloud/diego-cr/simple-python-app:la
 ```
 > O comando docker push envia a imagem marcada para o registry. Isso faz com que a imagem seja armazenada no Container Registry e fique disponível para uso e distribuição. Esse comando faz o upload da imagem simple-python-app:latest para o registry diego-cr na região especificada.
 
-## Baixar imagem no Kubernetes
-Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo YAML 
+## Fazer o deploy no Kubernetes com a imagem no CR
+Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo YAML https://github.com/abreuti/k8s-auth-guide/blob/main/liveness_readiness_files/deploy.yaml
+```bash
+kubectl apply -f simple-python-app.yaml
+```
 
-## Como funciona:
-- A aplicação demora 10 segundos para se declarar pronta (readiness)
-- Após 30 segundos de funcionamento, ela "quebra" e o livenessProbe começa a falhar
-- O Kubernetes vai reiniciar o container automaticamente
 
 
 
