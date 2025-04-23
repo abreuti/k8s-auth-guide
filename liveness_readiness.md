@@ -140,6 +140,19 @@ A aplicação Flask foi criada para simular dois comportamentos comuns em ambien
 - Readiness Delay: demora 10 segundos para estar pronta (/ready responde 503 até então).
 - Liveness Failure: "quebra" após 30 segundos de execução (/healthz passa a responder 500).
 
+### Resultado observado
+No kubectl describe pod, os eventos confirmam o comportamento:
+- Readiness Probe falha inicialmente com 503, o que é esperado nos primeiros 10 segundos.
+- Depois que a aplicação “quebra” (aos 30s), a Liveness Probe começa a falhar com 500.
+- O Kubernetes detecta a falha e reinicia automaticamente o container, como demonstrado pelo evento Killing.
+
+Ciclo contínuo - Esse ciclo continua indefinidamente:
+- App sobe,
+- após 10s fica pronta (readiness = OK),
+- após 30s quebra (liveness = NOK),
+- container é reiniciado,
+- volta pro passo 1.
+
 
 ## 📚 Estudo Pessoal
 
