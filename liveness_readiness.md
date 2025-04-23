@@ -114,6 +114,7 @@ Ciclo contínuo - Esse ciclo continua indefinidamente:
 - container é reiniciado,
 - volta pro passo 1.
 
+Observações: Após 6 restart, o K8S me retornou CrashLoopBackOff porque o container continua quebrando com frequência, então o K8s aplica backoff exponencial para não sobrecarregar o nó. Como é só um exemplo/simulação: tá funcionando como o esperado!
 
 ## 📚 Estudo Pessoal
 
