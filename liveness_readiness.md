@@ -8,7 +8,7 @@ Este projeto demonstra como rodar uma aplicação simples em Python com Flask de
 
 - [Docker](https://www.docker.com/get-started)
 - [Kubernetes](https://kubernetes.io/docs/setup/)
-- Conta na [Magalu Cloud](https://www.magalucloud.com.br/) para utilizar o CR (Container Registry)
+- Conta na [Magalu Cloud](https://console.magalu.cloud/) para utilizar o CR (Container Registry)
 
 ...
 
