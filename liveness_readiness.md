@@ -32,7 +32,7 @@ Como estou utilizando CR da Magalu Cloud, a região escolhida foi o DC da regiã
 ```bash
 docker login https://container-registry.br-se1.magalu.cloud
 ```
-** O comando docker login autentica o seu Docker com o Container Registry usando as credenciais obtidas pelo provedor de CR **
+> ** O comando docker login autentica o seu Docker com o Container Registry usando as credenciais obtidas pelo provedor de CR **
 
 Agora será necessário Taguear a Imagem Docker:
 ```bash
