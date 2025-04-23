@@ -1,4 +1,4 @@
-# Simple Python Flask App com Kubernetes Utilizando Liveness e Readiness
+# Estudo de Readiness e Liveness no Kubernetes com Aplicação Simples (Python + Flask) + Docker
 
 > **Este projeto é um estudo pessoal**. A finalidade é aprender e aplicar conhecimentos sobre Liveness e Readiness em Kubernetes. O código não é voltado para produção, mas sim para fins educacionais e experimentação.
 
