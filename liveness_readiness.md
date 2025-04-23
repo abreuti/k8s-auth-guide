@@ -14,7 +14,7 @@ Este projeto demonstra como rodar uma aplicação simples em Python com Flask de
 
 ## Estrutura do Projeto
 
-O repositório https://github.com/abreuti/k8s-auth-guide/tree/main/liveness_readiness_files 
+A pasta https://github.com/abreuti/k8s-auth-guide/tree/main/liveness_readiness_files 
 contém os seguintes arquivos principais:
 
 - **`app.py`**: Código da aplicação em Python usando Flask.
