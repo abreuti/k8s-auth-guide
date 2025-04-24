@@ -32,7 +32,7 @@ contém os seguintes arquivos principais:
 
 ---
 
-## Construir a imagem Docker da aplicação e realizar o push para o Container Registry
+## Construindo a imagem Docker da aplicação e realizando o push para o Container Registry
 
 Para criar a imagem Docker da aplicação, utilizei o seguinte comando:
 ```bash
