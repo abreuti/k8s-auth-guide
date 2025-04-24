@@ -14,7 +14,7 @@ Este projeto demonstra como rodar uma aplicação simples em Python com Flask de
 
 ## Estrutura do Projeto
 
-A pasta [Files](abreuti/k8s-probes-debug-study/tree/main/liveness_readiness/files) 
+A pasta [liveness_readiness/files](liveness_readiness/files/) 
 contém os seguintes arquivos principais:
 
 - **`app.py`**: Código da aplicação em Python usando Flask.
@@ -72,7 +72,7 @@ kubectl create secret docker-registry regcred \
         imagePullSecrets:
         - name: regcred**
 
-Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo YAML https://github.com/abreuti/k8s-auth-guide/blob/main/liveness_readiness_files/deploy.yaml
+Com a imagem enviada para o CR, crie o Deployment no Kubernetes usando o arquivo YAML 
 ```bash
 kubectl apply -f simple-python-app.yaml
 ```
