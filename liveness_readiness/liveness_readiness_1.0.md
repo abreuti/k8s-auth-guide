@@ -14,7 +14,7 @@ Este projeto demonstra como rodar uma aplicação simples em Python com Flask de
 
 ## Estrutura do Projeto
 
-A pasta [Files](k8s-probes-debug-study/liveness_readiness/liveness_readiness/files/) 
+A pasta [Files](abreuti/k8s-probes-debug-study/tree/main/liveness_readiness/files) 
 contém os seguintes arquivos principais:
 
 - **`app.py`**: Código da aplicação em Python usando Flask.
