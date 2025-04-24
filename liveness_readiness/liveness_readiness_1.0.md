@@ -14,7 +14,7 @@ Este projeto demonstra como rodar uma aplicação simples em Python com Flask de
 
 ## Estrutura do Projeto
 
-A pasta [Files](abreuti/k8s-auth-guide/tree/main/liveness_readiness_files) 
+A pasta [Files](liveness_readiness/files) 
 contém os seguintes arquivos principais:
 
 - **`app.py`**: Código da aplicação em Python usando Flask.
